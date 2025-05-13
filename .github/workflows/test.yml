@@ -1,0 +1,16 @@
+on:
+    push:
+jobs:
+    test:
+        runs-on: unbuntu-latest
+        steps:
+            - name: リポジトリのチェックアウト
+              uses: action/checkout@v4
+
+            - name: uv set up
+              uses: astral-sh/setup-uv@v5
+
+            - name: テスト実行
+              run:
+                    uv run fizzbuzz.py
+       
